@@ -1,15 +1,75 @@
 \subsection{Question 1}
 
+\subsubsection{Point 1}
+
+Données :
+
+\begin{equation}
+	\begin{aligned}
+		\int_a^b f(x) &\approx \sum_{i=1}^n f(x^{(i)}) \cdot h \cdot \int_1^n\frac{\prod_{j \neq i}(t-j)}{\prod_{j \neq i} (i - j)} dt\\
+		n &= 3\\
+		h &= \frac{b-a}{n-1} = \frac{b-a}{2}
+	\end{aligned}
+\end{equation}
+
+Résolution :
+
+\begin{equation}
+	\begin{aligned}
+		\int_a^b f(x) &\approx \sum_{i=1}^3 f(x^{(i)}) \cdot \frac{b-a}{2} \cdot \int_1^3\frac{\prod_{j \neq i}(t-j)}{\prod_{j \neq i} (i - j)} dt\\
+		&= f(x^{(1)}) \cdot \frac{b-a}{2} \cdot \omega_1 + f(x^{(2)}) \cdot \frac{b-a}{2} \cdot \omega_2 + f(x^{(3)}) \cdot \frac{b-a}{2} \cdot \omega_3
+	\end{aligned}
+\end{equation}
+
+On peut calculer les $\omega_i$ :
+
+\begin{equation}
+	\begin{aligned}
+		\omega_1 &= \int_1^3 \frac{(t-2)(t-3)}{(1-2)(1-3)} dt\\
+		&= \frac{1}{2} \int_1^3 t^2 - 5t + 6 dt\\
+		&= \frac{1}{2} \left [\frac{t^3}{3} - \frac{5t^2}{2} + 6t \right ]_1^3\\
+		&= \frac{1}{2}  \left [\frac{9}{2} - \frac{23}{6} \right ] = \frac{1}{3}\\
+		\omega_2 &= \int_1^3 \frac{(t-3)(t-3)}{(2-1)(2-3)} dt\\
+		&= -1 \int_1^3 t^2 - 4t + 3 dt\\
+		&= -1  \left [\frac{t^3}{3} - 2t^2 + 3t \right ]_1^3\\
+		&= -1  \left [ 0 - \frac{4}{3} \right ] = \frac{4}{3}\\
+		\omega_3 &= \int_1^3 \frac{(t-1)(t-2)}{(3-1)(3-2)} dt\\
+		&= \frac{1}{2} \int_1^3 t^2 - 3t + 2 dt\\
+		&= \frac{1}{2}  \left [\frac{t^3}{3} - \frac{3t^2}{2} + 2t \right ]_1^3\\
+		&= \frac{1}{2}  \left [ \frac{3}{2} - \frac{5}{6} \right ] = \frac{1}{3}\\
+	\end{aligned}
+\end{equation}
+
+On peut alors remplacer les $\omega_i$ pour obtenir :
+
+\begin{equation}
+	\begin{aligned}
+		\int_a^b f(x) &\approx f(a) \cdot \frac{b-a}{2} \cdot \frac{1}{3} + f(\frac{a+b}{2}) \cdot \frac{b-a}{2} \cdot \frac{4}{3} + f(b) \cdot \frac{b-a}{2} \cdot \frac{1}{3} \\
+		&= \frac{b-a}{6} \left (f(a) + 4f(\frac{a+b}{2})+f(b) \right )
+	\end{aligned}
+\end{equation}
+
+\subsubsection{Point 2}
+
 // TO DO
 
-
 \subsection{Question 2}
+
+\subsubsection{Point 1}
+
+// TO DO
+
+\subsubsection{Point 2}
+
+// TO DO
+
+\subsubsection{Point 3}
 
 // TO DO
 
 
 \subsection{Question 3}
-
+s
 // TO DO
 
 
