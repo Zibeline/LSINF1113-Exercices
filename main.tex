@@ -54,8 +54,11 @@ morecomment=[s]{/*}{*/},}
 \usepackage{geometry}
 %\geometry{A4, portrait, margin=0.91in}
 
-\newcommand{\code}[2]{
+\newcommand{\codelocation}[2]{
 	Le code se trouve dans le projet \texttt{#1} dans la classe \texttt{#2}.
+}
+\newcommand{\code}[2]{
+	\codelocation{#1}{#2}
 	\lstinputlisting{#1/#2}
 }
 
