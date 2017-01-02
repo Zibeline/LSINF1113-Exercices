@@ -2,7 +2,7 @@
 \usepackage[utf8]{inputenc}
 \usepackage{graphicx}
 \usepackage{float}
-
+\usepackage{hyperref}
 \usepackage{listings}
 \usepackage{amsmath}
 \usepackage{xcolor}
@@ -12,7 +12,7 @@
     breaklines=true,
     postbreak=\raisebox{0ex}[0ex][0ex]{\ensuremath{\color{red}\hookrightarrow\space}},
     extendedchars=true,
-    literate={à}{{\`a}}1 {ã}{{\~a}}1 {é}{{\'e}}1,
+    literate={à}{{\`a}}1 {è}{{\`e}}1 {ã}{{\~a}}1 {é}{{\'e}}1,
 }
 \usepackage{geometry}
 %\geometry{A4, portrait, margin=0.91in}
@@ -30,7 +30,7 @@
 
 \maketitle
 
-Ce document reprends les réponses aux questions des exercices proposés pour chaque $lecture$. Malgré le soin apporté à sa réalisation, aucune garantie n'est apportée quant à l'exactitude des réponses et chacun est invité à aider à compléter ou corriger ce document pour le rendre meilleur. Le code LaTeX de ce document est disponible sur Github.
+Ce document reprends les réponses aux questions des exercices proposés pour chaque $lecture$. Malgré le soin apporté à sa réalisation, aucune garantie n'est apportée quant à l'exactitude des réponses et chacun est invité à aider à compléter ou corriger ce document pour le rendre meilleur. Le code \LaTeX de ce document est disponible sur GitHub\footnote{\url{https://github.com/Zibeline/LSINF1113-Exercices/}}.
 
 Les projets Java liés se trouvent dans le même dossier que ce fichier. Pour les toute petites classes indépendantes, elles ont toutes été rassemblées dans le projet "littleclasses". A nouveau, aucune garantie n'est apportée sur le fait que le code soit correct, encore moins sur le fait qu'il soit optimal. Ici aussi chacun peut aider à les améliorer.
 
@@ -47,7 +47,7 @@ Les projets Java liés se trouvent dans le même dossier que ce fichier. Pour le
 \input{lecon_4.tex}
 
 \section{Matrix norm and condition}
-%\input{lecon_5.tex}
+\input{lecon_5.tex}
 
 \section{Interpolation}
 \input{lecon_6.tex}
