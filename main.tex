@@ -6,6 +6,17 @@
 \usepackage{listings}
 \usepackage{amsmath}
 \usepackage{xcolor}
+
+\lstdefinelanguage{java}
+{morekeywords=[1]{public,private,protected,class,interface,implements,extends,this,null,super,return,static,new,if,else,switch,case,while,for,do,break,continue,final,synchronized,try,catch,true,false,enum,assert,throw,throws,abstract,import},
+morekeywords=[2]{double,float,long,int,short,byte,char,boolean,void},
+morekeywords=[3]{String,System,BufferedReader,FileReader,IOException,BufferedWriter,FileWriter,ArithmeticException,Exception,List,ArrayList,Collections,Integer,Hashtable,Map,Runtime,StringBuilder},
+morekeywords=[4]
+{@Override},
+morestring=[b]{"},
+morecomment=[l]{//},
+morecomment=[s]{/*}{*/},}
+
 \lstset{
     frame=single,
     language=Java,                 % the language of the code
@@ -14,6 +25,32 @@
     extendedchars=true,
     literate={à}{{\`a}}1 {è}{{\`e}}1 {ã}{{\~a}}1 {é}{{\'e}}1,
 }
+\lstset{basicstyle=\fontsize{7}{8}\selectfont\tt}
+\lstset{keywordstyle=[1]\color[rgb]{0,0,1}\bfseries}
+\lstset{keywordstyle=[2]\color[rgb]{0.6,0,0}\bfseries}
+\lstset{keywordstyle=[3]\color[rgb]{0,0.6,0}\bfseries}
+\lstset{identifierstyle=\color{black}}
+\lstset{commentstyle=\color[rgb]{0,0.6,0.6}}
+\lstset{stringstyle=\color[rgb]{0.44,0.47,1}}
+\lstset{showstringspaces=false}
+\lstset{showtabs=false}
+\lstset{tabsize=3}
+\lstset{extendedchars=true}
+\lstset{breaklines=true}
+\lstset{postbreak={}}
+\lstset{breakautoindent=true}
+\lstset{breakindent=0pt}
+\lstset{xleftmargin=0.1cm}
+\lstset{xrightmargin=1mm}
+\lstset{frame=shadowbox,rulecolor=\color[gray]{.2},rulesepcolor=\color[gray]{.75},framesep=2pt,backgroundcolor=\color[rgb]{1,1,0.9}}
+\lstset{captionpos=b}
+\lstset{aboveskip=0.5cm,belowskip=0cm}
+\lstset{numbers=left}
+\lstset{numberstyle=\tiny}
+\lstset{columns=fixed}
+\lstset{escapechar=§}
+\lstset{language=java}
+
 \usepackage{geometry}
 %\geometry{A4, portrait, margin=0.91in}
 
