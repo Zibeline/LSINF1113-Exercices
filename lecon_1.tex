@@ -1,0 +1,48 @@
+\subsection{Question 1}
+
+\begin{equation}
+	\begin{aligned}
+		0.1 &= \frac{1}{2^5} + \frac{1}{2^6} + \frac{1}{2^8} + RE \\
+		&= 0.1015625
+	1\end{aligned}
+\end{equation}
+
+L'erreur est donc de $|\frac{0.1015625 - 0.1}{0.1}| = 0.015625$ soit une erreur de moins de 5 \%.
+
+Rien que pour représenter la partie décimale, il faut donc 8 bits. Cela ne tiens pas compte ni du bit pour le signe ni des bits pour représenter la partie entière.
+
+\subsection{Question 2}
+
+\begin{equation}
+	\begin{aligned}
+		x &= [\underline{x}, \overline{x}]\\
+		y &= [\underline{y}, \overline{y}]
+	\end{aligned}
+\end{equation}
+
+On peut donc calculer la somme et le produit de $x$ et $y$ de cette manière :
+
+\begin{equation}
+	\begin{aligned}
+		x + y &= [\underline{x} + \underline{y}, \overline{x} + \overline{y}]\\
+		x \cdot y &= [\underline{x} \cdot \underline{y}, \overline{x} \cdot \overline{y}]
+	\end{aligned}
+\end{equation}
+
+\subsection{Question 3}
+
+// TO DO
+
+\subsection{Question 4}
+Le code se trouve dans le projet $"littleclasses"$ dans la classe $expo.java$.
+
+La méthode main contient deux variables, \texttt{start} et \texttt{end} qui déterminent les bornes où évaluer la fonction. La variable \texttt{pointsToCalculate} détermine le nombre de points à calculer. Les points seront répartis de manière uniforme entre \texttt{start} et \texttt{end}.
+\lstinputlisting{littleclasses/expo.java}
+
+Et voici le graphique généré via gnuplot avec comme paramètre \texttt{pointsToCalculate} à 100 :
+
+\begin{figure}[H]
+	\caption{\label{ex} Plot avec 100 points de calcul}
+	\centering
+	\includegraphics[scale = 0.6]{1_plot.png}
+\end{figure}

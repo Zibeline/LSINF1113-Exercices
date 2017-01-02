@@ -1,0 +1,166 @@
+\subsection{Question 1}
+
+Nous allons donc vérifier les 3 propriétés :
+
+\begin{enumerate}
+    \item $||A + B|| \leq ||A|| + ||B||$
+    \item $||A \cdot W|| \leq ||A|| \cdot ||W||$
+    \item $||A \cdot B|| \leq ||A|| \cdot ||B||$
+\end{enumerate}
+
+\paragraph{1e propriété}
+
+\begin{equation}
+	\begin{aligned}
+		||A + B|| &= max_{||V||=1}||(A + B)V||\\
+		&= max_{||V||=1}||AV + BV||\\
+		&= max_{||V||=1}||AV|| + max_{||V||=1}||BV||\\
+	\end{aligned}
+\end{equation}
+
+On peut passer de la deuxième à la troisième ligne car quand on multiplie une matrice par un vecteur on obtient un vecteur, et on peut donc appliquer les propriétés des vecteurs.
+
+D'autre part on a que :
+
+\begin{equation}
+	\begin{aligned}
+		||A|| + ||B|| &= max_{||V||=1}||AV|| + max_{||V||=1}||AV||
+	\end{aligned}
+\end{equation}
+
+\paragraph{2e propriété}
+
+Pour le cas ou $W = 0$, on sait que multiplier une matrice par un vecteur nul donne un vecteur nul, et que la norme d'un vecteur num est nul.
+
+\begin{equation}
+	\begin{aligned}
+		||A \cdot W|| &= ||A \cdot 0||\\
+		&= ||0||\\
+		&= 0
+	\end{aligned}
+\end{equation}
+
+
+\begin{equation}
+	\begin{aligned}
+		||A|| \cdot ||W|| &= ||A|| \cdot ||0||\\
+		&= ||A|| \cdot ||0||\\
+		&= 0
+	\end{aligned}
+\end{equation}
+
+Pour le cas ou $W \neq 0$ 
+
+\paragraph{3e propriété}
+
+\subsection{Question 2}
+
+Trouvons juste un contre exemple.
+
+\begin{equation}
+	A = 
+	\begin{pmatrix}
+		1 & 2\\
+		3 & 4
+	\end{pmatrix};\\
+	B = 
+	\begin{pmatrix}
+		5 & 6\\
+		7 & 8
+	\end{pmatrix};\\
+	C = A \cdot B = 
+	\begin{pmatrix}
+		19 & 22\\
+		43 & 50
+	\end{pmatrix}
+\end{equation}
+
+\begin{equation}
+	\begin{aligned}
+		||A \cdot B|| &= ||C|| = max_{i,j}|c_{i,j}| = 50\\
+		||A|| \cdot ||B|| &= max_{i,j}|a_{i,j}| \cdot max_{i,j}|b_{i,j}| = 4 \cdot 8 = 32\\
+	\end{aligned}
+\end{equation}
+
+Pour que la norme soit sub-miltiplicative il faut que $||A \cdot B|| \leq ||A|| \cdot ||B||$. Or 50 n'est pas plus petit ou égal à 32, donc cette norme ne peut être sub-multiplicative.
+
+\subsection{Question 3}
+
+Pour cette question toutes les matrices inverses ont été calculées via Matrixcalc.org. Pour des matrices 2x2 on peut aisément le faire "à la main" avec la formule suivante (merci Wikipédia) :
+
+\begin{equation}
+	\begin{aligned}
+		A = 
+		\begin{pmatrix}
+			a & b\\
+			c & d
+		\end{pmatrix}; A^{-1} = 
+		\begin{pmatrix}
+			a & b\\
+			c & d
+		\end{pmatrix}^{(-1)} = 
+		\frac{1}{ad-bc}
+		\begin{pmatrix}
+			d & -b\\
+			-c & a
+		\end{pmatrix}
+	\end{aligned}
+\end{equation}
+
+La condition pour appliquer cette méthode étant que $ad - bc \neq 0$ (sinon on divise par zéro, et ça on ne peut pas faire).
+
+\subsubsection{Point 1}
+
+\begin{equation}
+	\begin{aligned}
+		Cond (A) &= ||A|| \cdot ||A^{-1}||\\
+		||\cdot||_1 &= max_{1 \leq j \leq n} \sum_{i=1}^m|a_{ij}|\\
+		\begin{pmatrix}
+			2 & 3\\
+			3 & 4
+		\end{pmatrix}^{(-1)} = 
+		\begin{pmatrix}
+			-4 & 3\\
+			3 & -2
+		\end{pmatrix}\\
+			||A|| &= 7\\
+			||A||^{(-1)} &= 7\\
+			Cond (A) &= 7 \cdot 7 = 49
+	\end{aligned}
+\end{equation}
+
+\subsubsection{Point 2}
+
+\begin{equation}
+	\begin{aligned}
+		\begin{pmatrix}
+			2 & 2.2\\
+			3 & 3.2
+		\end{pmatrix}^{(-1)} = 
+		\begin{pmatrix}
+			-16 & 11\\
+			15 & -10
+		\end{pmatrix}\\
+		||A|| &= 5.4\\
+		||A||^{(-1)} &= 31\\
+		Cond (A) &= ||A|| \cdot ||A^{-1}||\\
+		&= 5.4 \cdot 31 = 167.4
+	\end{aligned}
+\end{equation}
+
+On ne peut rien dire sur le condition number sans avoir calculé $A^{-1}$.
+
+\subsubsection{Point 3}
+
+\begin{equation}
+	\begin{aligned}X = 
+		\begin{pmatrix}
+			2 & 2.2\\
+			3 & 3.2
+		\end{pmatrix}; Y = 
+		\begin{pmatrix}
+			3\\
+			4
+		\end{pmatrix}
+	\end{aligned}
+\end{equation}

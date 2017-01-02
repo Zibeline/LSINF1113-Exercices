@@ -1,0 +1,180 @@
+\subsection{Question 1}
+
+\begin{equation}
+	\begin{aligned}
+		X^TXA &= X^TY\\
+		\begin{pmatrix}
+			1 & 1 & 1 & 1 & 1 & 1\\
+			95 & 85 & 80 & 70 & 60 & 70
+		\end{pmatrix}
+		\cdot
+		\begin{pmatrix}
+			1 & 95 \\
+			1 & 85 \\
+			1 & 80 \\
+			1 & 70 \\
+			1 & 60 \\
+			1 & 70 
+		\end{pmatrix}
+		\cdot
+		\begin{pmatrix}
+			a_1\\
+			a_2
+		\end{pmatrix}
+		&=
+		\begin{pmatrix}
+			1 & 1 & 1 & 1 & 1 & 1\\
+			95 & 85 & 80 & 70 & 60 & 70
+		\end{pmatrix}
+		\cdot
+		\begin{pmatrix}
+			85\\
+			95\\
+			70\\
+			65\\
+			70\\
+			80
+		\end{pmatrix}\\
+		\begin{pmatrix}
+			6 & 460\\
+			460 & 36050
+		\end{pmatrix}
+		\cdot
+		\begin{pmatrix}
+			a_1\\
+			a_2
+		\end{pmatrix}
+		&=
+		\begin{pmatrix}
+			465\\
+			36100
+		\end{pmatrix}\\
+		\begin{pmatrix}
+			1 & 36050/460\\
+			6 & 460
+		\end{pmatrix}
+		\cdot
+		\begin{pmatrix}
+			a_1\\
+			a_2
+		\end{pmatrix}
+		&=
+		\begin{pmatrix}
+			36100/460\\
+			465
+		\end{pmatrix}\\
+		\begin{pmatrix}
+			1 & 36050/460\\
+			0 & 460 - 6 \cdot \frac{36050}{460}
+		\end{pmatrix}
+		\cdot
+		\begin{pmatrix}
+			a_1\\
+			a_2
+		\end{pmatrix}
+		&=
+		\begin{pmatrix}
+			36100/460\\
+			465-6 \cdot \frac{36100}{460}
+		\end{pmatrix}\\
+		\begin{pmatrix}
+			1 & 36050/460\\
+			0 & 1
+		\end{pmatrix}
+		\cdot
+		\begin{pmatrix}
+			a_1\\
+			a_2
+		\end{pmatrix}
+		&=
+		\begin{pmatrix}
+			36100/460\\
+			\frac{465-6 \cdot \frac{36100}{460}}{460 - 6 \cdot \frac{36050}{460}}
+		\end{pmatrix}\\
+		\begin{pmatrix}
+			1 & 36050/460\\
+			0 & 1
+		\end{pmatrix}
+		\cdot
+		\begin{pmatrix}
+			a_1\\
+			a_2
+		\end{pmatrix}
+		&=
+		\begin{pmatrix}
+			36100/460\\
+			\frac{27}{47}
+		\end{pmatrix}\\
+		\begin{pmatrix}
+			1 & 0\\
+			0 & 1
+		\end{pmatrix}
+		\cdot
+		\begin{pmatrix}
+			a_1\\
+			a_2
+		\end{pmatrix}
+		&=
+		\begin{pmatrix}
+			36100/460-\frac{27}{47} \cdot 36050/460\\
+			\frac{27}{47}
+		\end{pmatrix}
+	\end{aligned}
+\end{equation}
+
+\begin{equation}
+	\begin{aligned}    
+		a_1 &= 33,457\\
+		a_2 &= 0.5745
+	\end{aligned}
+\end{equation}
+
+\subsection{Question 2}
+
+\subsubsection{Explicit normal equation for the model $y = a_1 + a_2x$}
+
+\begin{equation}
+	\begin{aligned}
+		\begin{pmatrix}
+			m & \displaystyle\sum_{i=1}^{m} x_i\\
+			\displaystyle\sum_{i=1}^{m} x_i & \displaystyle\sum_{i=1}^{m} x_i^2
+		\end{pmatrix}
+		\cdot
+		\begin{pmatrix}
+			a_1\\
+			a_2
+		\end{pmatrix}=
+		\begin{pmatrix}
+			\displaystyle\sum_{i=1}^{m} y_i\\
+			\displaystyle\sum_{i=1}^{m} x_iy_i
+		\end{pmatrix}
+	\end{aligned}
+\end{equation}
+
+\subsubsection{Explicit normal equation for the model $y = a_1 + a_2x + a_3x^2$}
+
+\begin{equation}
+	\begin{aligned}
+		\begin{pmatrix}
+			0m & \displaystyle\sum_{i=1}^{m} x_i & \displaystyle\sum_{i=1}^{m} x_i^2\\
+			\displaystyle\sum_{i=1}^{m} x_i & \displaystyle\sum_{i=1}^{m} x_i^2 & \displaystyle\sum_{i=1}^{m} x_i^3\\
+			\displaystyle\sum_{i=1}^{m} x_i^2 & \displaystyle\sum_{i=1}^{m} x_i^3 & \displaystyle\sum_{i=1}^{m} x_i^4\\
+		\end{pmatrix}
+		\cdot
+		\begin{pmatrix}
+			a_1\\
+			a_2\\
+			a_3
+		\end{pmatrix}=
+		\begin{pmatrix}
+			\displaystyle\sum_{i=1}^{m} y_i\\
+			\displaystyle\sum_{i=1}^{m} x_iy_i\\
+			\displaystyle\sum_{i=1}^{m} x_i^2y_i
+		\end{pmatrix}
+	\end{aligned}
+\end{equation}
+
+
+\subsection{Question 3}
+
+// TO DO
