@@ -11,10 +11,11 @@ public class NumAlgoPlotter {
      */
     public static void main(String[] args) {
         LinkedList<ControlPoint> controlPoints=new LinkedList<>();
+        
         controlPoints.add(new ControlPoint(-300,-100));
         controlPoints.add(new ControlPoint(-100,0));
         controlPoints.add(new ControlPoint(100,0));
-        controlPoints.add(new ControlPoint(300,100));     
+        controlPoints.add(new ControlPoint(300,100));  
         
         MainFrame mainFrame=new MainFrame(controlPoints);
         
@@ -28,10 +29,13 @@ public class NumAlgoPlotter {
             }
         }.setColor(Color.green));
         
-        //mainFrame.add(new VandermondePlotter().setColor(Color.red));
+        mainFrame.add(new VandermondePlotter().setColor(Color.red));
         mainFrame.add(new NewtonPlotter().setColor(Color.blue));
         mainFrame.add(new CubicSplinePlotter());
         
+        // Ne pas oubliez de commenter tous les autres plotters pour utiliser BSplinePlotter
+        // mainFrame.add(new BSplinePlotter());
+        
         mainFrame.setVisible(true);
-    }    
+    }
 }
