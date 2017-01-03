@@ -49,11 +49,42 @@ public class Utilities {
         for (int i = 0; i < base.getHeight(); i++) {
             System.out.print("│");
             for (int j = 0; j < base.getWidth(); j++) {
-                System.out.format("\t%010.3f", base.get(i, j));
+                System.out.format("\t%10.3f", base.get(i, j));
             }
             System.out.println("\t│");
         }
         
+    }
+    
+    public static void printLatex(Matrix base) {
+        System.out.println("\\begin{pmatrix}");
+        for (int i = 0; i < base.getHeight(); i++) {
+            System.out.print("\t");
+            for (int j = 0; j < base.getWidth(); j++) {
+                if (j>0) System.out.print(" & ");
+                System.out.print(base.get(i, j));
+            }
+            System.out.println("\\");
+        }
+        System.out.println("\\end{pmatrix}");
+    }
+    
+    /**
+     * Transforme une matrice dans un string tel que mise dans un document LaTeX en tableau
+     */
+    public static double[][] fromLatexToArray(String latex) {
+        String[] lines = latex.split("\\\\");
+        String[] cols_tmp = lines[0].split("&");
+        
+        double[][] ret = new double[lines.length][cols_tmp.length];
+        
+        for (int i = 0; i < lines.length; i++) {
+            String[] cols = lines[i].split("&");
+            for (int j = 0; j < cols.length; j++) {
+                ret[i][j] = Double.parseDouble(cols[j]);
+            }
+        }
+        return ret;
     }
     
     public static void main(String[] args) {

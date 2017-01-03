@@ -19,6 +19,17 @@ public class SimpleMatrix implements Matrix<Double> {
         data = vals;
     }
     
+    public SimpleMatrix(double[][] vals) {
+        this(vals.length, vals[0].length, vals);
+    }
+    
+    public SimpleMatrix(String latex) {
+        double[][] vals = Utilities.fromLatexToArray(latex);
+        this.m = vals.length;
+        this.n = vals[0].length;
+        this.data = vals;
+    }
+    
     public Double get(int i, int j) {
         if (i<0 || j<0) return 0.;
         return data[i][j];
