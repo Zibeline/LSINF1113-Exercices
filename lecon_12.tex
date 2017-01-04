@@ -28,9 +28,10 @@
 
 \code{littleclasses}{ForwardEuler.java}
 
-Pour adapter le code à une autre fonction, il faut modifier les variables au début ainsi que la méthode \texttt{F}. Il est également possible de mettre la fonction exacte dans la méthode \texttt{exactFunction} et de mettre le booléen \texttt{compareWithExactFunction} à \texttt{true}. Dans ce cas, un deuxième fichier est créé contenant les valeurs calculées avec la fonction exacte. On peut alors créer un graphe pour les comparer avec gnuplot par exemple via la commande suivante :
+Pour adapter le code à une autre fonction, il faut modifier les variables dans la méthode \texttt{main} ainsi que la méthode \texttt{F}. Il est également possible de mettre la fonction exacte dans la méthode \texttt{exactFunction} et de mettre alors le booléen \texttt{compareWithExactFunction} à \texttt{true}. Dans ce cas, le tableau renvoyé par la méthode \texttt{process} contiendra une troisième colonne avec les évaluations pour ces $x$ de la fonction exacte. On peut alors créer un graphe pour comparer les résultats obtenus par Forward Euler et les valeurs exactes avec gnuplot par exemple via la commande suivante :
+
 \begin{lstlisting}
-plot 'forward_euler.txt' with lines, 'exact_function.txt' with lines
+plot 'forward_euler.txt' using 1:2 with lines title 'Forward Euler', '' using 1:3 with lines title 'Exact function'
 \end{lstlisting}
 
 \begin{figure}[H]
@@ -41,6 +42,15 @@ plot 'forward_euler.txt' with lines, 'exact_function.txt' with lines
 
 
 \subsection{Question 2}
+
+\begin{equation}
+	\begin{aligned}
+	\begin{cases}
+	f'(x) = x + \sqrt{f(x)}\\
+	f(1) = 2
+	\end{cases}
+	\end{aligned}
+\end{equation}
 
 // TO DO
 
