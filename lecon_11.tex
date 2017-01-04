@@ -76,13 +76,25 @@ L'interpolation devient alors identique à la méthode du "two sided centered di
 
 \paragraph{$f$ differentiable but $f'$ is expensive to evaluate}
 
-// TO DO
+Si $f$ est diiférentiable mais chèr à évaluer, on peut utiliser la 'secant method'. Avec cette méthode on va approximer en ré-utilisant ce qu'on a déjà calculé lors des itérations précédentes.
+
+\begin{equation}
+	\begin{aligned}
+		f'(x_k) &\approx \frac{f(x_k) - f(x_{k-1})}{x_k-x_{k-1}}\\
+		x_{k+1} &= x_k - \frac{f(x_k)(x_k-x_{k-1})}{f(x_k)-f(x_{k-1})}
+	\end{aligned}
+\end{equation}
 
 \paragraph{$f$ is continuous but not differentiable}
 
-Si 
+Si $f$ est continue mais pas différentiable, on peut utiliser le 'bisection algorithm'.
 
-// TO DO
+\begin{equation}
+	\begin{aligned}
+		f(a) < u < f(b)\quad &\text{ou} \quad f(a) > u > f(b)\\
+		&\exists z \in [a, b] \text{ tq } f(z) = u
+	\end{aligned}
+\end{equation}
 
 \subsubsection{Point 2}
 
@@ -90,7 +102,34 @@ Si
 
 \subsubsection{Point 3}
 
-// TO DO
+\begin{equation}
+	\begin{aligned}
+		Cost(f(x)) &= t\\
+		Cost(f'(x)) &= \frac{t}{2}
+	\end{aligned}
+\end{equation}
+
+On va calculer pour chaque méthode combien de fois on doit calculer $f(x)$ et $f'(x)$ lors d'une itération pour pouvoir estimer le cout de chaque méthode. La méthode qui aura le cout d'une itération le plus bas sera préférée.
+
+\paragraph{Newton-Raphson}Avec la méthode de Newton-Raphson, lors d'une itération on calcule une fois $f(x)$ et une fois $f'(x)$
+
+\begin{equation}
+	\begin{aligned}
+		Cost(Newton-Raphson) &= 1 \cdot Cost(f(x)) + 1 \cdot Cost(f'(x))\\
+		&= t + \frac{t}{2} = \frac{3t}{2}
+	\end{aligned}
+\end{equation}
+
+\paragraph{Secant method}Avec la méthode sécante, lors d'une itération on calcule trois fois $f(x)$ et on ne calcule jamais $f'(x)$.
+
+\begin{equation}
+	\begin{aligned}
+		Cost(Secant) &= 3 \cdot Cost(f(x)) + 0 \cdot Cost(f'(x))\\
+		&= 3t
+	\end{aligned}
+\end{equation}
+
+Pour les couts donnés, la méthode sécante coute deux fois plus que la méthode de Newton-Raphson, qui sera donc préférée dans ce cas.
 
 \subsection{Question 4}
 
