@@ -135,15 +135,60 @@ Pour les couts donnés, la méthode sécante coute deux fois plus que la méthod
 
 \subsubsection{Point 1}
 
-// TO DO
+\code{littleclasses}{NewtonRaphson.java}
+
+Quelques commentaires sur le code ;
+
+\begin{itemize}
+\item La méthode \texttt{getIteration} calcule une itération
+\item \texttt{process} calcule la racine pour un $x_0$ donné et une erreur acceptable
+\item En plottant le fichier créé par la méthode \texttt{saveData} on peut voir le nombre d'itérations nécessaire en fonction du $x_0$
+\end{itemize}
 
 \subsubsection{Point 2}
 
-// TO DO
+Avec la méthode \texttt{main}, on va calculer la racine avec la méthode de Newton-Raphson pour 100 points répartis uniformément entre $-10$ et $10$. On peut voir sur le graphique le nombre d'itérations nécessaires en fonction du $x_0$ choisi.
 
+\begin{figure}[H]
+	\caption{\label{11_newton_raphson} Nombre d'itérations en fonction du $x_0$ choisi}
+	\centering
+	\includegraphics[scale = 0.6]{11_newton_raphson.png}
+\end{figure}
+
+A l'aide de la méthode \texttt{displayNoConvergence} on peut récupérer les $x_0$ pour lesquels Newton-Cotes ne converge pas. Voici la liste des points qui après 200 itérations n'ont pas trouvé de solution :
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|c|}
+\hline
+-0.30303030303030276\\
+-0.10101010101010033\\
+0.10101010101010033\\
+1.3131313131313131\\
+1.5151515151515156\\
+1.7171717171717162\\
+2.121212121212121\\
+2.3232323232323235\\
+2.525252525252524\\
+3.1313131313131315\\
+3.9393939393939394\\
+4.3434343434343425\\
+4.545454545454545\\
+4.94949494949495\\
+5.555555555555555\\
+5.757575757575758\\
+6.363636363636363\\
+6.767676767676768\\
+7.171717171717173\\
+7.373737373737374\\
+9.595959595959595\\
+10.0\\
+\hline
+\end{tabular}
+\end{table}
 \subsubsection{Point 3}
 
-// TO DO
+On peut déduire du graphique qu'au plus $x_0$ est loin de la racine, au plus le nombre d'itérations nécessaires est élevé.
 
 \subsection{Question 5}
 
