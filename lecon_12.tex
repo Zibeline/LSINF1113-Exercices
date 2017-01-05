@@ -11,7 +11,19 @@
 	\end{aligned}
 \end{equation}
 
-// TO DO : calcul de stabilité
+Pour que l'IVP soit stable, il faut que $\frac{\delta F}{\delta f}|_{(x_i, \zeta_i)}<0$
+
+\begin{equation}
+	\begin{aligned}
+		\frac{\delta F}{\delta f}|_{(x_i, \zeta_i)} &= \frac{\delta}{\delta f} (1+(x-f(x))^2)\\
+		&= (2f(x)-2x)|_{(x_i, \zeta_i)}\\
+		(2f(x)-2x) &<0\\
+		f(x)-x &< 0\\
+		\frac{1}{1-x}+x-x&<0
+	\end{aligned}
+\end{equation}
+
+Si on vérifie cette dernière inéquation pour tous les $x$ d'intéret (à savoir $x \geq 2$), on constate qu'elle est toujours vérifiée. L'IVP est donc stable pour les valeurs d'intérêt.
 
 \subsubsection{Point 2}
 
@@ -22,7 +34,19 @@
 	\end{aligned}
 \end{equation}
 
-// TO DO : calcul de h
+Pour que les itérations soient stable, il faut que $h < \frac{-2}{\frac{\delta F}{\delta f}|_{(x_i, \zeta_i)}}$
+
+\begin{equation}
+	\begin{aligned}
+		h &< \frac{-2}{\frac{\delta F}{\delta f}|_{(x_i, \zeta_i)}}\\
+		&< \frac{-2}{2f(x)-2x}\\
+		&< \frac{-1}{f(x)-x}\\
+		&< \frac{-1}{\frac{1}{1-x}+x-x}\\
+		&< x-1
+	\end{aligned}
+\end{equation}
+
+Il faut donc choisir un $h$ plus petit que $1$ pour que les itérations soient stable.
 
 \subsubsection{Point 3}
 
@@ -52,7 +76,19 @@ plot 'forward_euler.txt' using 1:2 with lines title 'Forward Euler', '' using 1:
 	\end{aligned}
 \end{equation}
 
+Pour l'implémentation de Forward Euler, il nous suffit d'adapter l'implémentation de la question précédente en modifiant les variables de la valeur initiale et la méthode \texttt{F}. Pour le Classical Runge-Kutta on peut très simplement l'implémenter en se basant sur la structure de notre implémentation pour Forward Euler.
+
+\code{littleclasses}{RK4.java}
+
+\subsubsection{Point 1}
+
 // TO DO
+
+\subsubsection{Point 2}
+
+Pour calculer le plus grand $h$ qui nous permette d'obtenir une solution exacte arrondie à 4 décimales, on peut utiliser une boucle qui commence avec un grand $h$ et le réduit tant que la différence entre la solution obtenue et le solution exacte est trop grande. Cette technique a été implémentée dans la méthode \texttt{calculate\_biggest\_h} et on peut ainsi déterminer que le plus grand $h$ qui nous permets d'obtenir une solution exacte est $0.2$.
+
+\subsubsection{Point 3}
 
 \subsection{Question 3}
 
