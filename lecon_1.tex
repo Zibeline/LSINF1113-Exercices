@@ -32,7 +32,13 @@ On peut donc calculer la somme et le produit de $x$ et $y$ de cette manière :
 
 \subsection{Question 3}
 
-// TO DO
+\subsubsection{Point 1}
+
+\paragraph{Très petit x}
+Si $x_i \ll 0$, alors $e^x$ va devenir très petit. En effet, $e^{x} = \frac{1}{e^{|x|}}$ (pour $x$ négatif). $e^{|x|}$ sera donc grand et du coup $\frac{1}{e^{|x|}}$ sera très petit. On peut même dire que si $x$ est fortement négatif, $e^x$ tend vers 0. On obtiens alors $log(0+0+...+0) = log(0)$, ce qui est impossible. On aura donc une erreur lors de l'exécution de $log(0)$.
+
+\paragraph{Très grand x}
+Si $x_i \gg 0$, alors $e^x$ va devenir très grand, et on va très rapidement etteindra la capacité maximale et provoquer un $overflow$. On aura donc également une erreur, mais cette erreur aura lieu cette fois-ci dès le calcul de $e^x$.
 
 \subsection{Question 4}
 
@@ -45,5 +51,5 @@ Et voici le graphique généré via gnuplot\footnote{\url{http://www.gnuplot.inf
 \begin{figure}[H]
 	\caption{\label{ex} Plot avec 100 points de calcul}
 	\centering
-	\includegraphics[scale = 0.6]{1_plot.png}
+	\includegraphics[scale = 0.55]{1_plot.png}
 \end{figure}

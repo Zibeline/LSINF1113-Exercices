@@ -110,4 +110,28 @@ public class RK4 {
         System.out.println("h = "+h);
         System.out.println("points = "+points);
     }
+    
+    public static void calculate_biggest_h() {
+        // Point connu : f(a) = v
+        double a = 1;
+        double v = 2;
+    
+        double maxX = 3.; // Valeur max de x jusqu'ou il faut calculer
+        
+        double exactSolution = 106446;
+        double actualSolution = v;
+        double h = -1;
+        int pointsBegin = 2;
+        int points = pointsBegin;
+        do {
+            h = (maxX-a)/(points-1);
+            double[][] data = process(a, v, h, maxX);
+            actualSolution = data[data.length-1][1];
+            points++;
+        } while (points<pointsBegin+100 && Math.abs(Math.round(actualSolution*100)-exactSolution)>=1);
+        
+        System.out.println("f("+maxX+") = "+actualSolution);
+        System.out.println("h = "+h);
+        System.out.println("points = "+points);
+    }
 }
