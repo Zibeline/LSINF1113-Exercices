@@ -40,6 +40,18 @@ Si $x_i \ll 0$, alors $e^x$ va devenir très petit. En effet, $e^{x} = \frac{1}{
 \paragraph{Très grand x}
 Si $x_i \gg 0$, alors $e^x$ va devenir très grand, et on va très rapidement etteindra la capacité maximale et provoquer un $overflow$. On aura donc également une erreur, mais cette erreur aura lieu cette fois-ci dès le calcul de $e^x$.
 
+\subsubsection{Point 2}
+
+On peut remplacer chaque $x_i$ par $x_i-a+a$, où $a = max|\text{Valeur }x_i|$ :
+
+\begin{equation}
+	\begin{aligned}
+		log(e^{a+x_i-a}+...+e^{a+x_i-a}) &= log (e^a(e^{x_i-a}+...+e^{x_i-a})\\
+		&= log (e^a)+log(\sum e^{x_i-a})\\
+		&= a+log(\sum e^{x_i-a})\\
+	\end{aligned}
+\end{equation}
+
 \subsection{Question 4}
 
 La méthode main contient deux variables, \texttt{start} et \texttt{end} qui déterminent les bornes où évaluer la fonction. La variable \texttt{pointsToCalculate} détermine le nombre de points à calculer. Les points seront répartis de manière uniforme entre \texttt{start} et \texttt{end}.
@@ -51,5 +63,5 @@ Et voici le graphique généré via gnuplot\footnote{\url{http://www.gnuplot.inf
 \begin{figure}[H]
 	\caption{\label{ex} Plot avec 100 points de calcul}
 	\centering
-	\includegraphics[scale = 0.55]{1_plot.png}
+	\includegraphics[scale = 0.61]{1_plot.png}
 \end{figure}
