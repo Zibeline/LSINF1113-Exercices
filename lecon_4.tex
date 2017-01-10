@@ -214,7 +214,53 @@ Le fonctionnement de l'algorithme est développé en détail sur Wikipédia \foo
 
 \subsubsection{Point 2}
 
-// TO DO
+\begin{equation}
+	\begin{aligned}
+		A=\begin{pmatrix}
+		a & b\\
+		c & d
+		\end{pmatrix}
+	\end{aligned}
+\end{equation}
+
+La matrice $A$ est positive définie si $Z^TAZ > 0$, pour un $Z$ non nul quelconque dans $R^n$.
+
+\begin{equation}
+	\begin{aligned}
+		\begin{pmatrix}
+		z_1 & z_2
+		\end{pmatrix}\cdot
+		\begin{pmatrix}
+		a & b\\
+		c & d
+		\end{pmatrix}\cdot
+		\begin{pmatrix}
+		z_1\\
+		z_2
+		\end{pmatrix} &> 0\\
+		\begin{pmatrix}
+		z_1\cdot a + z_2\cdot c & z_1\cdot b + z_2\cdot d
+		\end{pmatrix}\cdot
+		\begin{pmatrix}
+		z_1\\
+		z_2
+		\end{pmatrix} &> 0\\
+		z_1^2\cdot a + z_1\cot z_2\cdot c + z_1 \cdot z_2 \cdot b + z_2^2\cdot d &> 0
+	\end{aligned}
+\end{equation}
+
+Vu que $Z \neq 0$, $z_1$ et $z_2$ ne peuvent pas être nuls en même temps.
+
+\begin{equation}
+	\begin{aligned}
+		z_1=0; z_2 \neq 0 \rightarrow &\quad z_2^2d>0\\
+		&\quad d>0\\
+		z_1\neq 0; z_2 = 0 \rightarrow &\quad z_1^2a>0\\
+		&\quad a>0\\
+	\end{aligned}
+\end{equation}
+
+$z_1^2$ et $z_2^2$ étant forcément plus grands que $0$ car ils sont non nuls et au carré, donc forcément positif.
 
 \subsubsection{Point 3}
 
